@@ -9,7 +9,7 @@
     <link rel="favicon" href="/sustain/static/img/favicon.ico">
 
     
-      <title>Another markdown full cheatsheet demo (Markdown)</title>
+      <title>Blocipedia</title>
     
 
     <!-- Bootstrap -->
@@ -54,8 +54,8 @@
     </div>
     <div id="navbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/sustain/blog.html">BLOG</a></li>
-        <li><a href="/sustain/projects.html">PROJECTS</a></li>
+        <li><a href="/sustain/blog.html">PROJECTS</a></li>
+       <!--   <li><a href="/sustain/projects.html">BLOG</a></li> -->
         <li><a href="http://allyrv.github.io">RESUME</a></li>
       </ul>
     </div>
@@ -66,7 +66,7 @@
     <div class="container">
 	<div class="blog-post">
 		<h3>
-		  <strong><a href="/post2.html">Another markdown full cheatsheet demo (Markdown)</a></strong>
+		  <strong><a href="/post2.html">Blocipedia</a></strong>
 		</h3>
 	</div>
 	<div class="blog-title">
@@ -74,198 +74,49 @@
 		May 27, 2013
 			&nbsp;&nbsp;
 			
-			 <span class="label label-success">News</span>
+			 <span class="label label-success">Ruby</span>
 			
-			 <span class="label label-success">Tags</span>
+			 <span class="label label-success">Rails</span>
 			
-			 <span class="label label-success">Blog</span>
+			 <span class="label label-success">Bootstrap</span>
 			
-			 <span class="label label-success">Post</span>
+			 <span class="label label-success">Devise Gem</span>
+			
+			 <span class="label label-success">Stripe Gem</span>
 			
 		</h4>
 	</div>
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<div class="blogpost">
-			  <blockquote>
-  <p>This is Markdown Cheatsheet Demo for <strong>Sustain</strong>, this Jekyll theme. Please check the raw content of this file for the markdown usage.</p>
-</blockquote>
+			  <h2>Summary</h2>
+<p>Blocipedia is a Ruby-on-Rails application I built as a part of my training at Bloc with the help of my mentor, Shannon Bertucci. Blocipedia allows users to create public and private Markdown-based wikis. Users have the ability to create a free, standard account, which allows them to create public wikis. Alternatively, they can upgrade to a premium account to view and create private wikis and manage collaborators.</p>
 
-<h2 id="typography-elements-in-one">Typography Elements in One</h2>
+<h2>Explanation</h2>
+<p>Blocipedia was structured as a real sink-or-swim project. The assignments’ structure do not walk you through the steps, as Bloc has done in past projects. Instead the project’s instructions are brief, and I chose it because I really wanted to challenge myself.</p>
 
-<p>Let’s start with a informative paragraph. <strong>This text is bolded.</strong> But not this one! <em>How about italic text?</em> Cool right? Ok, let’s <strong><em>combine</em></strong> them together. Yeah, that’s right! I have code to highlight, so <code class="highlighter-rouge">ThisIsMyCode()</code>. What a nice! Good people will hyperlink away, so <a href="#">here we go</a> or <a href="http://www.example.com">http://www.example.com</a>.</p>
-
-<div class="divider"></div>
-
-<h2 id="headings-h1-to-h6">Headings H1 to H6</h2>
-
-<h1 id="h1-heading">H1 Heading</h1>
-
-<h2 id="h2-heading">H2 Heading</h2>
-
-<h3 id="h3-heading">H3 Heading</h3>
-
-<h4 id="h4-heading">H4 Heading</h4>
-
-<h5 id="h5-heading">H5 Heading</h5>
-
-<h6 id="h6-heading">H6 Heading</h6>
-
-<div class="divider"></div>
-
-<h2 id="footnote">Footnote</h2>
-
-<p>Let’s say you have text that you want to refer with a footnote, you can do that too! This is an example for the footnote number one <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>. You can even add more footnotes, with link! <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
-
-<div class="divider"></div>
-
-<h2 id="blockquote">Blockquote</h2>
-
-<blockquote>
-  <p>Start by doing what’s necessary; then do what’s possible; and suddenly you are doing the impossible. –Francis of Assisi</p>
-</blockquote>
-
-<p><strong>NOTE:</strong> This theme does NOT support nested blockquotes.</p>
-
-<div class="divider"></div>
-
-<h2 id="list-items">List Items</h2>
-
-<ol>
-  <li>First order list item</li>
-  <li>Second item</li>
-</ol>
-
+<h2>Project Requirements</h2>
+<p>I was given a series of user stories for this project:</p>
 <ul>
-  <li>Unordered list can use asterisks</li>
-  <li>Or minuses</li>
-  <li>Or pluses</li>
+<li>As a user, I want to sign up for a free account by providing a user name, password and email</li>
+<li>As a user, I want to sign in and out of Blocipedia</li>
+<li>As a user with a standard account, I want to create, read, update and delete public wikis</li>
+<li>As a developer, I want to offer three user roles: admin, standard, or premium</li>
+<li>As a developer, I want to seed the development database automatically with users and wikis</li>
+<li>As a user, I want to upgrade my account from a free to a paid plan</li>
+<li>As a premium user, I want to create private wikis</li>
+<li>As a user, I want to edit wikis using Markdown syntax</li>
+<li>As a premium user, I want to add and remove collaborators for my private wikis</li>
 </ul>
 
-<div class="divider"></div>
+<h2>Problem</h2>
+<p>The most difficult part of this project was thinking through the database. Setting up collaborators was challenging because prior to that user story, I had been using the <code class="highlighter-rouge">belongs to</code>, <code class="highlighter-rouge">has many</code> relationship for the database. However, a collaborator status modifies an existing user, and each wiki can have several collaborators. I also ran into some trouble with the database when deploying to Heroku.</p>
 
-<h2 id="code-blocks">Code Blocks</h2>
+<h2>Solution</h2>
+<p>I learned how to read error messages more carefully and better decipher the feedback. I felt like I got a lot better at being resourceful and looking for solutions on my own. So, following the <a href="http://guides.rubyonrails.org/association_basics.html#the-has-many-through-association" target="_blank">Rails guide on active record associations</a>, I set up <code class="highlighter-rouge">has many through</code> associations to get the relationships to work s intended.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="s2">"JavaScript syntax highlighting"</span><span class="p">;</span>
-<span class="nx">alert</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span></code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>  
-<span class="n">s</span> <span class="o">=</span> <span class="s">"Python syntax highlighting"</span>
-<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>  
-<span class="k">def</span> <span class="nf">run_some_function</span><span class="p">():</span>
-    <span class="s">"Docs..."</span>
-    <span class="k">return</span></code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* css synthax highlighting */</span> 
-<span class="nf">#container</span> <span class="p">{</span>
-    <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
-    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">-240px</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
-    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No language indicated, so no syntax highlighting.
-But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
-</code></pre></div></div>
-
-<div class="divider"></div>
-
-<h2 id="table">Table</h2>
-
-<h3 id="table-1-with-alignment">Table 1: With Alignment</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Tables</th>
-      <th style="text-align: center">Are</th>
-      <th style="text-align: right">Cool</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>col 3 is</td>
-      <td style="text-align: center">right-aligned</td>
-      <td style="text-align: right">$1600</td>
-    </tr>
-    <tr>
-      <td>col 2 is</td>
-      <td style="text-align: center">centered</td>
-      <td style="text-align: right">$12</td>
-    </tr>
-    <tr>
-      <td>zebra stripes</td>
-      <td style="text-align: center">are neat</td>
-      <td style="text-align: right">$1</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="table-2-with-typography-elements">Table 2: With Typography Elements</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Markdown</th>
-      <th>Less</th>
-      <th>Pretty</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><em>Still</em></td>
-      <td><code class="highlighter-rouge">renders</code></td>
-      <td><strong>nicely</strong></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>2</td>
-      <td>3</td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="divider"></div>
-
-<h2 id="horizontal-line">Horizontal Line</h2>
-
-<p>The HTML <code class="highlighter-rouge">&lt;hr&gt;</code> element is for creating a “thematic break” between paragraph-level elements. In markdown, you can create a <code class="highlighter-rouge">&lt;hr&gt;</code> with any of the following:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">___</code>: three consecutive underscores</li>
-  <li><code class="highlighter-rouge">---</code>: three consecutive dashes</li>
-  <li><code class="highlighter-rouge">***</code>: three consecutive asterisks</li>
-</ul>
-
-<p>renders to:</p>
-
-<hr />
-
-<hr />
-
-<hr />
-
-<div class="divider"></div>
-
-<h2 id="media">Media</h2>
-
-<h3 id="youtube-embedded-iframe">YouTube Embedded Iframe</h3>
-
-<iframe width="420" height="315" src="https://www.youtube.com/embed/nN6QuNqmAwk" frameborder="0" allowfullscreen=""></iframe>
-
-<h3 id="image">Image</h3>
-
-<p><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSn8cwf82ee9tfml4Wx-tsM5AUavJ_DRHIiXXE4RejRp0RF2L7f6g" alt="Nature" /></p>
-
-<div class="footnotes">
-  <ol>
-    <li id="fn:1">
-      <p>Footnote number one yeah baby!&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
-    </li>
-    <li id="fn:2">
-      <p>A footnote you can link to - <a href="#">click here!</a>&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+<h2>Results</h2>
+<p>After a good struggle with deploying Blocipedia to Heroku, I successfully pushed this app to production. There’s a lot to be desired on the front-end, but it was an awesome learning experience for all-things-back-end. Check it out <a href="https://arcane-crag-67381.herokuapp.com" target="_blank">here</a>.</p>
 
 			   <hr>
 			   <div class="related-posts">
@@ -279,7 +130,7 @@ But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
 							 </div>
 							 <div class="col-sm-8 col-md-8 col-lg-8">
 								 <h6 style="text-align: left">
-								 	<strong><a href="/sustain//post1.html">A Full and Comprehensive Style Test (HTML)</a></strong>
+								 	<strong><a href="/sustain//post1.html">Capstone Project when it's done!</a></strong>
 								 </h6>
 							 </div>
 						</div>
@@ -292,20 +143,7 @@ But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
 							 </div>
 							 <div class="col-sm-8 col-md-8 col-lg-8">
 								 <h6 style="text-align: left">
-								 	<strong><a href="/sustain//post3.html">Now some lorem ipsum</a></strong>
-								 </h6>
-							 </div>
-						</div>
-					
-						<div class="row">
-							 <div class="col-sm-4 col-md-4 col-lg-4">
-								 <h6 style="text-align: right">
-								 	March 15, 2013
-								 </h6>
-							 </div>
-							 <div class="col-sm-8 col-md-8 col-lg-8">
-								 <h6 style="text-align: left">
-								 	<strong><a href="/sustain//post4.html">Continued...</a></strong>
+								 	<strong><a href="/sustain//post3.html">Bloc Chat</a></strong>
 								 </h6>
 							 </div>
 						</div>
