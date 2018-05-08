@@ -6,7 +6,7 @@
   
   <link href="http://localhost:3000/"/>
   <id>http://localhost:3000/</id>
-  <updated>2018-05-04T11:02:02Z</updated>
+  <updated>2018-05-07T20:57:14Z</updated>
   <author>
     <name>Alyssa Vargas</name>
     <email>allyrvargas@gmail.com</email>
@@ -19,7 +19,7 @@
   <id>http://localhost:3000/post1</id>
   <published>2013-06-05T00:00:00Z</published>
   <updated>2013-06-05T00:00:00Z</updated>
-  <content type="html"><![CDATA[ <h2>Coming June 2018!</h2>
+  <content type="html"><![CDATA[ <h2>Coming July 2018!</h2>
 
 <p>In the meantime, checkout some of my other projects on <a href="http://github.com/allyrv">Github <i class="fa fa-github"></i></a></p>
  ]]></content>
